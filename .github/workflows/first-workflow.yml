@@ -2,18 +2,17 @@ name: Datacom First Workflow
 
 on:
   push:
-      branches: [main]
+    branches: [main]
   workflow_dispatch:
 
-  env:
-    PROJECT_NAME: WCD BANK CLOUD MIGRATION
+env:
+  PROJECT_NAME: WCD Bank Cloud Migration
 
-    jobs:
-      hello:
-         runs-on: ubuntu-latest
-         env:
-            ENVIRONMENT: dev
-
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: dev
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
