@@ -1,0 +1,28 @@
+name: Datacom First Workflow
+
+on:
+  push:
+      branches: [main]
+  workflow_dispatch:
+
+  env:
+    PROJECT_NAME: WCD BANK CLOUD MIGRATION
+
+    jobs:
+      hello:
+         runs-on: ubuntu-latest
+         env:
+            ENVIRONMENT: dev
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello from ${{ env.PROJECT_NAME }}"
+
+      - name: Show who triggered this
+        run: echo "Triggered by $GITHUB_ACTOR on $GITHUB_REPOSITORY in the $ENVIRONMENT environment"
+
+      - name: List the files
+        run: ls -la
