@@ -25,3 +25,9 @@ jobs:
 
       - name: List the files
         run: ls -la
+
+      - name: Report run details
+        run: |
+          echo "Run completed on $(date)"
+          echo "Run number: $GITHUB_RUN_NUMBER"
+          echo "Built by Ryan for the WCD Bank project"
